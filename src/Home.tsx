@@ -7,23 +7,23 @@ function getGreeting(): string {
   return 'Good evening';
 }
 
-export default function Home({ setCurrentPage }: { setCurrentPage: (page: any) => void }) {
+export default function Home({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   return (
     <div style={{ maxWidth: '500px', margin: '40px auto', textAlign: 'center' }}>
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '8px' }}>
-        {getGreeting()}, Siena! 👋
+      <h1 style={{ fontSize: '2.5rem', marginBottom: '8px', fontFamily: 'Gilda-Display' }}>
+        {getGreeting()}, Siena! 🌅
       </h1>
       <p style={{ color: '#888', marginBottom: '40px', fontSize: '1.1rem' }}>
         Where would you like to begin?
       </p>
-
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {[
-          { label: '📅 Calendar', page: 'calendar' },
-          { label: '✅ To Do List', page: 'todo' },
-          { label: '🏆 Accomplished', page: 'accomplished' },
-          { label: '⏱️ Focus Timer', page: 'timer' },
-          { label: '📝 Plan', page: 'plan' },
+          { label: '🌸 Calendar', page: 'calendar' },
+          { label: '💛 To Do', page: 'todo' },
+          { label: '🎀 Plan', page: 'plan' },
+          { label: '🌞 Accomplished', page: 'accomplished' },
+          { label: '🩷 Focus Timer', page: 'timer' },
+          
         ].map(({ label, page }) => (
           <button
             key={page}
@@ -35,14 +35,12 @@ export default function Home({ setCurrentPage }: { setCurrentPage: (page: any) =
               borderRadius: '10px',
               backgroundColor: '#fff',
               cursor: 'pointer',
-              transition: 'background-color 0.2s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#f5f5f5')}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#fff')}
           >
             {label}
           </button>
         ))}
       </div>
     </div>
-  )
+  );
+}

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+* {
+  font-family: 'Gilda Display';
+}
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
